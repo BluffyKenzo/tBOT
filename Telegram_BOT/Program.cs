@@ -8,7 +8,7 @@ namespace Telegram_BOT
 {
     class Program
     {
-        private static string BotToken = "5289331216:AAGz-Hf1uMN9SrNM7F8vvGdHfDzzf2dcWlM";
+        private static string BotToken {get; set;} = "5289331216:AAGz-Hf1uMN9SrNM7F8vvGdHfDzzf2dcWlM";
         private static TelegramBotClient client;
 
         static void Main(string[] args)
@@ -36,7 +36,6 @@ namespace Telegram_BOT
                     // ПОКУПКА УСЛУГ //
 
                     case "Услуги":
-
                         await client.SendTextMessageAsync(msg.Chat.Id, "Сообщество BlueStars предоставляет следующие услуги: \n \n1)Провести полный курс по монтажу Ваших видео (начинать будем с полного 0). " +
                             "\n2)Сделать эдит для Вас (тема не важна). " +
                             "\n3)Сделать полное оформление с вашей тематикой и ником (Discord, YouTube, Twitch, payship). \n " +
@@ -63,7 +62,7 @@ namespace Telegram_BOT
                             sticker: "https://cdn.tlgrm.app/stickers/113/b2a/113b2af8-922d-464d-a487-07884e142a15/192/1.webp",
                             replyMarkup: GetButtons());
 
-                        await client.SendTextMessageAsync(msg.Chat.Id, "Отлично! Ваша заявка внесена в систему, пожалуйста, ожидайте сообщение в личные сообщения от пользователя @Xenoz.", replyMarkup: GetButtonsOplata());
+                        await client.SendTextMessageAsync(msg.Chat.Id, "Отлично! Ваша заявка внесена в систему, пожалуйста, ожидайте сообщение в личные сообщения от пользователя @Xenoz.", replyMarkup: GetButtons());
                         break;
 
                     case "JayKar":
@@ -72,7 +71,7 @@ namespace Telegram_BOT
                             sticker: "https://tlgrm.ru/_/stickers/bcd/de3/bcdde3d4-a147-48b8-8985-27d0f5de430f/192/18.webp",
                             replyMarkup: GetButtons());
 
-                        await client.SendTextMessageAsync(msg.Chat.Id, "Отлично! Ваша заявка внесена в систему, пожалуйста, ожидайте сообщение в личные сообщения от пользователя @JayKar.", replyMarkup: GetButtonsOplata());
+                        await client.SendTextMessageAsync(msg.Chat.Id, "Отлично! Ваша заявка внесена в систему, пожалуйста, ожидайте сообщение в личные сообщения от пользователя @JayKar.", replyMarkup: GetButtons());
                         break;
 
                     case "Frog (6ft3)":
@@ -81,7 +80,7 @@ namespace Telegram_BOT
                             sticker: "https://tlgrm.ru/_/stickers/4dd/300/4dd300fd-0a89-3f3d-ac53-8ec93976495e/192/115.webp",
                             replyMarkup: GetButtons());
 
-                        await client.SendTextMessageAsync(msg.Chat.Id, "Отлично! Ваша заявка внесена в систему, пожалуйста, ожидайте сообщение в личные сообщения от пользователя @Frog.", replyMarkup: GetButtonsOplata());
+                        await client.SendTextMessageAsync(msg.Chat.Id, "Отлично! Ваша заявка внесена в систему, пожалуйста, ожидайте сообщение в личные сообщения от пользователя @Frog.", replyMarkup: GetButtons());
                         break;
 
                     case "Retuurn":
@@ -90,33 +89,79 @@ namespace Telegram_BOT
                             sticker: "https://tlgrm.ru/_/stickers/4dd/300/4dd300fd-0a89-3f3d-ac53-8ec93976495e/192/117.webp",
                             replyMarkup: GetButtons());
 
-                        await client.SendTextMessageAsync(msg.Chat.Id, "Отлично! Ваша заявка внесена в систему, пожалуйста, ожидайте сообщение в личные сообщения от пользователя @Retuurn.", replyMarkup: GetButtonsOplata());
-                        break;
-
-                        // ВЫБОР СПОСОБА ОПЛАТЫ //
-
-                    case "Mastercard":
-                        await client.SendTextMessageAsync(msg.Chat.Id, "Сумма вашего заказа - .", replyMarkup: GetButtons());
-                        break;
-
-                    case "Visa":
-                        await client.SendTextMessageAsync(msg.Chat.Id, "Сумма вашего заказа - .", replyMarkup: GetButtons());
-                        break;
-
-                    case "Qiwi":
-                        await client.SendTextMessageAsync(msg.Chat.Id, "Сумма вашего заказа - .", replyMarkup: GetButtons());
-                        break;
-
-                    case "PayPal":
-                        await client.SendTextMessageAsync(msg.Chat.Id, "Сумма вашего заказа - .", replyMarkup: GetButtons());
+                        await client.SendTextMessageAsync(msg.Chat.Id, "Отлично! Ваша заявка внесена в систему, пожалуйста, ожидайте сообщение в личные сообщения от пользователя @Retuurn.", replyMarkup: GetButtons());
                         break;
 
                         // ПОКУПКА ПРОЕКТОВ //
 
                     case "Проекты":
+                        var sticJPROJ = await client.SendStickerAsync(
+                            chatId: msg.Chat.Id,
+                            sticker: "https://tlgrm.ru/_/stickers/4dd/300/4dd300fd-0a89-3f3d-ac53-8ec93976495e/192/31.webp",
+                            replyMarkup: GetButtonsPJ());
+
+                        await client.SendTextMessageAsync(msg.Chat.Id, "В нашем магазине Вы можете купить проекты эдитов, который представлены ниже: ", replyMarkup: GetButtonsPJ());
                         break;
-    
-                        // ИНФОРМАЦИЯ О СООБЩЕСТВЕ //
+
+                    case "After Dark - by Xenoz":
+                        await client.SendTextMessageAsync(msg.Chat.Id, "При покупке данного проекта Вы получаете: " +
+                            "\n \n1)Файл проекта в After Effects (.aep) \n2)Материалы из эдита (музыка, видио фрагменты, звуковые эффекты) " +
+                            "\n \nТак же в файле будет прикреплена ссылка на гайд, как загрузить этот проекты в After Effects. " +
+                            "\n \nЦена проекта - 2000 рублей." +
+                            "\n \nВы поддтверждаете покупку?", replyMarkup: GetButtonsPOD());
+                        break;
+
+                    case "Levi Sad Edit - by JayKar":
+                        await client.SendTextMessageAsync(msg.Chat.Id, "При покупке данного проекта Вы получаете: " +
+                            "\n \n1)Файл проекта в After Effects (.aep) \n2)Материалы из эдита (музыка, видио фрагменты, звуковые эффекты) " +
+                            "\n \nТак же в файле будет прикреплена ссылка на гайд, как загрузить этот проекты в After Effects. " +
+                            "\n \nЦена проекта - 1800 рублей." +
+                            "\n \nВы поддтверждаете покупку?", replyMarkup: GetButtonsPOD());
+                        break;
+
+                    case "La La La - by Frog (6ft3)":
+                        await client.SendTextMessageAsync(msg.Chat.Id, "При покупке данного проекта Вы получаете: " +
+                            "\n \n1)Файл проекта в After Effects (.aep) \n2)Материалы из эдита (музыка, видио фрагменты, звуковые эффекты) " +
+                            "\n \nТак же в файле будет прикреплена ссылка на гайд, как загрузить этот проекты в After Effects. " +
+                            "\n \nЦена проекта - 1500 рублей." +
+                            "\n \nВы поддтверждаете покупку?", replyMarkup: GetButtonsPOD());
+                        break;
+
+                    case "High - by Frog (6ft3)":
+                        await client.SendTextMessageAsync(msg.Chat.Id, "При покупке данного проекта Вы получаете: " +
+                            "\n \n1)Файл проекта в After Effects (.aep) \n2)Материалы из эдита (музыка, видио фрагменты, звуковые эффекты) " +
+                            "\n \nТак же в файле будет прикреплена ссылка на гайд, как загрузить этот проекты в After Effects. " +
+                            "\n \nЦена проекта - 1000 рублей." +
+                            "\n \nВы поддтверждаете покупку?", replyMarkup: GetButtonsPOD());
+                        break;
+
+                    case "Fairytale - by Retuurn":
+                        await client.SendTextMessageAsync(msg.Chat.Id, "При покупке данного проекта Вы получаете: " +
+                            "\n \n1)Файл проекта в After Effects (.aep) \n2)Материалы из эдита (музыка, видио фрагменты, звуковые эффекты) " +
+                            "\n \nТак же в файле будет прикреплена ссылка на гайд, как загрузить этот проекты в After Effects. " +
+                            "\n \nЦена проекта - 1300 рублей." +
+                            "\n \nВы поддтверждаете покупку?", replyMarkup: GetButtonsPOD());
+                        break;
+
+                    case "Test project":
+                        await client.SendTextMessageAsync(msg.Chat.Id, "Этот бесплатный проект мы предоставляем для возможности изучений структуры самого простого эдита. \n\nССылка на скачивание - https://disk.yandex.ru/i/oz5mVyLdr76uQ", replyMarkup: GetButtonsPJ());
+                        break;
+
+                    // Подтвержение покупки //
+
+                    case "Да":
+                        await client.SendTextMessageAsync(msg.Chat.Id, "Отлично, сейчас вам будет предоставлена ссылка на оплату, после оплаты вас перебросит на яндекс диск, где вы сможете скачать данный проект.", replyMarkup: GetButtonsPJ());
+                        break;
+
+                    case "Нет":
+                        var sticJNO = await client.SendStickerAsync(
+                            chatId: msg.Chat.Id,
+                            sticker: "https://tlgrm.ru/_/stickers/4dd/300/4dd300fd-0a89-3f3d-ac53-8ec93976495e/192/20.webp",
+                            replyMarkup: GetButtonsPJ());
+
+                        break;
+
+                    // ИНФОРМАЦИЯ О СООБЩЕСТВЕ //
 
                     case "Сообщество BlueStars":
                         var sticLOGO = await client.SendStickerAsync(
@@ -153,7 +198,7 @@ namespace Telegram_BOT
                         break;
                 }
             }
-        }
+        }   
 
         private static IReplyMarkup GetButtons()
         {
@@ -200,6 +245,7 @@ namespace Telegram_BOT
                 }
             };
         }
+
         private static IReplyMarkup GetButtonsOplata()
         {
             return new ReplyKeyboardMarkup
@@ -208,6 +254,30 @@ namespace Telegram_BOT
                 {
                     new List<KeyboardButton> {new KeyboardButton {Text = "Mastercard" }, new KeyboardButton {Text = "Visa"}},
                     new List<KeyboardButton> {new KeyboardButton {Text = "PayPal"}, new KeyboardButton {Text = "Qiwi"}}
+                }
+            };
+        }
+
+        private static IReplyMarkup GetButtonsPJ()
+        {
+            return new ReplyKeyboardMarkup
+            {
+                Keyboard = new List<List<KeyboardButton>>
+                {
+                    new List<KeyboardButton> {new KeyboardButton {Text = "After Dark - by Xenoz" }, new KeyboardButton {Text = "Levi Sad Edit - by JayKar" }},
+                    new List<KeyboardButton> {new KeyboardButton {Text = "La La La - by Frog (6ft3)" }, new KeyboardButton {Text = "High - by Frog (6ft3)" }},
+                    new List<KeyboardButton> {new KeyboardButton {Text = "Fairytale - by Retuurn" }, new KeyboardButton {Text = "Test project" }}
+                }
+            };
+        }
+
+        private static IReplyMarkup GetButtonsPOD()
+        {
+            return new ReplyKeyboardMarkup
+            {
+                Keyboard = new List<List<KeyboardButton>>
+                {
+                    new List<KeyboardButton> {new KeyboardButton {Text = "Да" }, new KeyboardButton {Text = "Нет" }}
                 }
             };
         }
