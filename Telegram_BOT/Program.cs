@@ -107,6 +107,7 @@ namespace Telegram_BOT
                         await client.SendTextMessageAsync(msg.Chat.Id, "При покупке данного проекта Вы получаете: " +
                             "\n \n1)Файл проекта в After Effects (.aep) \n2)Материалы из эдита (музыка, видио фрагменты, звуковые эффекты) " +
                             "\n \nТак же в файле будет прикреплена ссылка на гайд, как загрузить этот проекты в After Effects. " +
+                            "\n \n Вы получите проект следуюзего эдита - https://youtu.be/MEZ-0nyiago" +
                             "\n \nЦена проекта - 2000 рублей." +
                             "\n \nВы поддтверждаете покупку?", replyMarkup: GetButtonsPOD());
                         break;
@@ -115,6 +116,7 @@ namespace Telegram_BOT
                         await client.SendTextMessageAsync(msg.Chat.Id, "При покупке данного проекта Вы получаете: " +
                             "\n \n1)Файл проекта в After Effects (.aep) \n2)Материалы из эдита (музыка, видио фрагменты, звуковые эффекты) " +
                             "\n \nТак же в файле будет прикреплена ссылка на гайд, как загрузить этот проекты в After Effects. " +
+                            "\n \n Вы получите проект следуюзего эдита - https://youtu.be/c6haYHzccfc" +
                             "\n \nЦена проекта - 1800 рублей." +
                             "\n \nВы поддтверждаете покупку?", replyMarkup: GetButtonsPOD());
                         break;
@@ -123,6 +125,7 @@ namespace Telegram_BOT
                         await client.SendTextMessageAsync(msg.Chat.Id, "При покупке данного проекта Вы получаете: " +
                             "\n \n1)Файл проекта в After Effects (.aep) \n2)Материалы из эдита (музыка, видио фрагменты, звуковые эффекты) " +
                             "\n \nТак же в файле будет прикреплена ссылка на гайд, как загрузить этот проекты в After Effects. " +
+                            "\n \n Вы получите проект следуюзего эдита - https://youtu.be/F1S73CCPsMY" +
                             "\n \nЦена проекта - 1500 рублей." +
                             "\n \nВы поддтверждаете покупку?", replyMarkup: GetButtonsPOD());
                         break;
@@ -131,6 +134,7 @@ namespace Telegram_BOT
                         await client.SendTextMessageAsync(msg.Chat.Id, "При покупке данного проекта Вы получаете: " +
                             "\n \n1)Файл проекта в After Effects (.aep) \n2)Материалы из эдита (музыка, видио фрагменты, звуковые эффекты) " +
                             "\n \nТак же в файле будет прикреплена ссылка на гайд, как загрузить этот проекты в After Effects. " +
+                            "\n \n Вы получите проект следуюзего эдита - https://youtu.be/9yJuYgct3TQ" +
                             "\n \nЦена проекта - 1000 рублей." +
                             "\n \nВы поддтверждаете покупку?", replyMarkup: GetButtonsPOD());
                         break;
@@ -139,6 +143,7 @@ namespace Telegram_BOT
                         await client.SendTextMessageAsync(msg.Chat.Id, "При покупке данного проекта Вы получаете: " +
                             "\n \n1)Файл проекта в After Effects (.aep) \n2)Материалы из эдита (музыка, видио фрагменты, звуковые эффекты) " +
                             "\n \nТак же в файле будет прикреплена ссылка на гайд, как загрузить этот проекты в After Effects. " +
+                            "\n \n Вы получите проект следуюзего эдита - https://youtu.be/eSEwbNObXrc" +
                             "\n \nЦена проекта - 1300 рублей." +
                             "\n \nВы поддтверждаете покупку?", replyMarkup: GetButtonsPOD());
                         break;
